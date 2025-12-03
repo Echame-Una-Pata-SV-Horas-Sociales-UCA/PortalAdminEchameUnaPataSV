@@ -9,6 +9,7 @@
   justify-content: flex-end;
   gap: 16px;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .btn-nuevo, .btn-eliminar {
@@ -49,12 +50,15 @@
 
 .tabla-wrapper {
   flex: 1;          
-  overflow-y: auto;   
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tabla-perros {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px; /* Ancho mínimo para mantener legibilidad */
 }
 
 .tabla-perros thead tr {
@@ -90,7 +94,9 @@
   align-items: center;
   border-top: 1px solid #ddd;
   padding-top: 12px;
-  margin-top: 8px;  
+  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .paginacion-botones {
@@ -132,4 +138,91 @@
 
 .tabla-perros input[type="checkbox"] {
   accent-color: #4A1214; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tabla-perros-container {
+    padding: 12px;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .tabla-perros {
+    font-size: 14px;
+  }
+
+  .th, .td {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  .paginacion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paginacion-botones {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .paginacion-btn {
+    flex: 1;
+    max-width: 120px;
+  }
+
+  .rows-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .acciones-tabla {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .btn-nuevo, .btn-eliminar {
+    font-size: 13px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+  }
+
+  .icono-svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabla-perros-container {
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .tabla-perros {
+    min-width: 500px;
+    font-size: 12px;
+  }
+
+  .th, .td {
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+
+  .menu-text {
+    display: none;
+  }
+
+  .acciones-tabla {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-nuevo, .btn-eliminar {
+    width: 100%;
+    justify-content: center;
+  }
 }

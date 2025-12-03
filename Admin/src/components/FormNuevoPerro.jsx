@@ -73,13 +73,13 @@ export default function FormNuevoPerro({ onClose, onSubmit }) {
 
             <form onSubmit={handleSubmit}>
               
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <div className="form-group" style={{ flex: 1 }}>
+              <div className="form-row">
+                <div className="form-group form-group-half">
                   <label>Nombre</label>
                   <input type="text" name="nombre" value={form.nombre} onChange={handleChange} className="form-input" required />
                 </div>
                 
-                <div className="form-group" style={{ flex: 1 }}>
+                <div className="form-group form-group-half">
                   <label>Especie</label>
                   <select name="especie" value={form.especie} onChange={handleChange} className="form-input">
                     <option value="DOG">Perro</option>
@@ -88,12 +88,12 @@ export default function FormNuevoPerro({ onClose, onSubmit }) {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <div className="form-group" style={{ flex: 1 }}>
+              <div className="form-row">
+                <div className="form-group form-group-half">
                   <label>Raza</label>
                   <input type="text" name="raza" value={form.raza} onChange={handleChange} className="form-input" required />
                 </div>
-                <div className="form-group" style={{ flex: 1 }}>
+                <div className="form-group form-group-half">
                   <label>Género</label>
                   <select name="genero" value={form.genero} onChange={handleChange} className="form-input">
                     <option value="MALE">Macho</option>
@@ -102,15 +102,15 @@ export default function FormNuevoPerro({ onClose, onSubmit }) {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '10px' }}>
-                 <div className="form-group" style={{ flex: 1 }}>
+              <div className="form-row">
+                 <div className="form-group form-group-half">
                   <label>¿Tiene algún miembro amputado?</label>
                   <select name="amputado" value={form.amputado} onChange={handleChange} className="form-input">
                     <option value="false">No</option>
                     <option value="true">Sí</option>
                   </select>
                 </div>
-                <div className="form-group" style={{ flex: 1 }}>
+                <div className="form-group form-group-half">
                   <label>Ubicación de rescate</label>
                   <input type="text" name="ubicacion" value={form.ubicacion} onChange={handleChange} className="form-input" required placeholder="Ej: San Salvador" />
                 </div>
