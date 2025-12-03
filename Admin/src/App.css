@@ -1,0 +1,43 @@
+:root {
+  --bg: #f5f7fb;
+  --accent: #2563eb;
+  --muted: #6b7280;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Roboto, sans-serif;
+}
+
+/* Layout general */
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Contenido */
+.content {
+  flex: 1;
+  padding: 28px;
+}
+
+.page-title {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  color: #111827;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
