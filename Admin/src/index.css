@@ -54,3 +54,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Mejoras responsive generales */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

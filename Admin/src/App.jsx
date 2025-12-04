@@ -1,7 +1,8 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import Inicio from "./pages/Inicio";
 import SolicitudesAdopcion from "./pages/SolicitudesAdopcion";
@@ -11,24 +12,96 @@ import GestionPerros from "./pages/GestionPerros";
 import GestionPadrinos from "./pages/GestionPadrinos";
 
 import "./App.css"; 
+import Login from "./pages/Login";
+
+function AppContent() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Verificar si existe el token TOKEN_APP
+    const token = localStorage.getItem("TOKEN_APP");
+    const hasToken = token && token.trim() !== "";
+    
+    if (location.pathname === "/login") {
+      setIsLoggedIn(false);
+    } else {
+      setIsLoggedIn(hasToken);
+    }
+  }, [location.pathname]);
+
+  return (
+    <div className="app-root">
+      <Sidebar showSidebar={isLoggedIn}/>
+      <main className={`content${isLoggedIn ? "" : " content--login"}`}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route 
+            path="/" 
+            element={
+              <ProtectedRoute>
+                <Inicio />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/solicitudes-adopcion" 
+            element={
+              <ProtectedRoute>
+                <SolicitudesAdopcion />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/denuncias" 
+            element={
+              <ProtectedRoute>
+                <Denuncias />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/solicitudes-apadrinamiento" 
+            element={
+              <ProtectedRoute>
+                <SolicitudesApadrinamiento />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/gestion-perros" 
+            element={
+              <ProtectedRoute>
+                <GestionPerros />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/gestion-padrinos" 
+            element={
+              <ProtectedRoute>
+                <GestionPadrinos />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="*" 
+            element={
+              <ProtectedRoute>
+                <Inicio />
+              </ProtectedRoute>
+            } 
+          />
+        </Routes>
+      </main>
+    </div>
+  );
+}
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="app-root">
-        <Sidebar />
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/solicitudes-adopcion" element={<SolicitudesAdopcion />} />
-            <Route path="/denuncias" element={<Denuncias />} />
-            <Route path="/solicitudes-apadrinamiento" element={<SolicitudesApadrinamiento />} />
-            <Route path="/gestion-perros" element={<GestionPerros />} />
-            <Route path="/gestion-padrinos" element={<GestionPadrinos />} />
-            <Route path="*" element={<Inicio />} />
-          </Routes>
-        </main>
-      </div>
+      <AppContent />
     </BrowserRouter>
   );
 }

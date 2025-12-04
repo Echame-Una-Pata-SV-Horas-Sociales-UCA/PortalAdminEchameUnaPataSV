@@ -2,6 +2,7 @@
   --bg: #f5f7fb;
   --accent: #2563eb;
   --muted: #6b7280;
+  --sidebar-w: 260px;
 }
 
 /* Reset */
@@ -28,6 +29,17 @@ html,
 .content {
   flex: 1;
   padding: 28px;
+  margin-left: var(--sidebar-w);
+  transition: margin-left 0.3s ease;
+}
+
+.content--login {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: inherit;
 }
 
 .page-title {
@@ -41,3 +53,37 @@ p {
   line-height: 1.5;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .app-root {
+    display: flex;
+    min-height: 100vh;
+    background: white;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px 16px;
+    padding-top: 70px; /* Espacio para el botón hamburguesa */
+  }
+
+  .content--login {
+    padding: 24px 16px;
+    padding-top: 24px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 16px 12px;
+    padding-top: 70px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+}

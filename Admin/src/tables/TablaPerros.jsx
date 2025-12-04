@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CustomSelect from "../components/CustomSelect";
-import "../styles/tablaPerros.css";
+import "../styles/TablaPerros.css";
 
 export default function TablaPerros({ data }) {
   const [page, setPage] = useState(0);
