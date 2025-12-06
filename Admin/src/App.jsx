@@ -40,7 +40,7 @@ function AppContent() {
             path="/" 
             element={
               <ProtectedRoute>
-                <Inicio />
+                <SolicitudesAdopcion />
               </ProtectedRoute>
             } 
           />

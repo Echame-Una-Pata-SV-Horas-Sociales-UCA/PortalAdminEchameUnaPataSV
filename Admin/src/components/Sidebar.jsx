@@ -15,7 +15,6 @@ export default function Sidebar({ showSidebar }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "Inicio", to: "/", icon: inicioIcon, exact: true },
     { label: "Solicitud de adopciones", to: "/solicitudes-adopcion", icon: adopcionIcon },
     { label: "Denuncias", to: "/denuncias", icon: emergenciasIcon },
     { label: "Gestión de perros", to: "/gestion-perros", icon: gestionPerrosIcon },
