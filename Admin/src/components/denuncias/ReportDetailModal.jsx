@@ -12,7 +12,7 @@ export default function ReportDetailModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="relative min-h-[50vh]: bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 animate-fadeIn ">
+      <div className="relative md:min-h-[50vh] bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 animate-fadeIn ">
         {/* BOTÓN CERRAR */}
         <button
           onClick={onClose}
@@ -27,13 +27,13 @@ export default function ReportDetailModal({
 
         {/* SKELETON MIENTRAS CARGA */}
         {loading && (
-          <div className="space-y-4 animate-pulse min-h-[50vh]">
+          <div className="space-y-4 animate-pulse md:min-h-[50vh]">
             <div className="h-4 bg-gray-200 rounded w-3/4"></div>
             <div className="h-4 bg-gray-200 rounded w-1/2"></div>
             <div className="h-4 bg-gray-200 rounded w-2/3"></div>
             <div className="h-4 bg-gray-200 rounded w-1/3"></div>
 
-            <div className="h-56 bg-gray-200 rounded-xl mt-4"></div>
+            <div className="md:h-56 h-25 bg-gray-200 rounded-xl mt-4"></div>
 
             <div className="flex justify-center mt-6">
               <Loader text="Cargando información..." />
