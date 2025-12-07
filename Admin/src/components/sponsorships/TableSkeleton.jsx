@@ -9,6 +9,7 @@ export const TableSkeleton = ({ rows = 6 }) => {
           <td className="td">
             <div className="w-4 h-7 bg-gray-300 rounded"></div>
           </td>
+          
 
           {/* Padrino */}
           <td className="td">
