@@ -6,6 +6,8 @@ import ReportDetailModal from "../components/denuncias/ReportDetailModal";
 import { Loader } from "../components/Loader";
 import TableSkeleton from "../components/denuncias/TableSkeleton";
 import { Tab } from "@mui/material";
+import { AUTH_TOKEN, API_BASE_URL } from "../config";
+
 
 const STATUS_META = {
   OPEN: { label: "Abierto", color: "#1d4ed8" },

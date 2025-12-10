@@ -3,6 +3,7 @@ import FormNuevoPerro from "../components/FormNuevoPerro";
 import CustomSelect from "../components/CustomSelect";
 import { apiFetch } from "../utils/apiClient";
 import { STATUS_CONFIG } from "../utils/animalConfig";
+import { AUTH_TOKEN, API_BASE_URL } from "../config";
 import "../styles/TablaPerros.css";
 import EditAnimalModal from "../components/animales/EditAnimalModal";
 import TableSkeleton from "../components/animales/TableSkeleton";

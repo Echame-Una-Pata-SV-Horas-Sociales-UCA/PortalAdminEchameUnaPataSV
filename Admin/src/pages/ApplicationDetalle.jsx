@@ -4,6 +4,8 @@ import { GetApplicationById } from "../service/Adoptions";
 import StatusUpdater from "../components/applicationDetails/StatusUpdater";
 import { UpdateApplicationStatus } from "../service/Adoptions";
 import { Observations } from "../components/applicationDetails/Observations";
+import { AUTH_TOKEN, API_BASE_URL } from "../config";
+
 
 import {
   CrueltyFree,

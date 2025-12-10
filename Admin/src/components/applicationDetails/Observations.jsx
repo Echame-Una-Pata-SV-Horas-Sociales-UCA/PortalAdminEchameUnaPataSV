@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export const Observations = ({observations}) => {
   return (
     <div className="w-fit">

@@ -3,6 +3,7 @@ import { apiGet } from "../utils/apiClient";
 import "../styles/TablaPerros.css";
 import { useNavigate } from "react-router-dom";
 import TableSkeleton from "../components/applicationDetails/TableSkeleton";
+import { AUTH_TOKEN, API_BASE_URL } from "../config";
 
 const STATUS_META = {
   PENDING: { label: "Pendiente", color: "#1d4ed8" },

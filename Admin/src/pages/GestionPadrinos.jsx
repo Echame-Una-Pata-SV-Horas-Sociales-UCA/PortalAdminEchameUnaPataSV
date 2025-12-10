@@ -5,6 +5,7 @@ import NuevoPadrino from "../components/NuevoPadrino";
 import FormRenovarPadrino from "../components/FormRenovarPadrino";
 import "../styles/TablaPerros.css";
 import { TableSkeleton } from "../components/sponsorships/TableSkeleton";
+import { AUTH_TOKEN, API_BASE_URL } from "../config";
 
 const STATUS_META = {
   ACTIVE: { label: "Activo", color: "#1d4ed8" },

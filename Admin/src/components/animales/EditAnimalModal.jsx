@@ -3,6 +3,7 @@ import { Loader } from "../Loader";
 import { STATUS_CONFIG } from "../../utils/animalConfig";
 import CloseIcon from "@mui/icons-material/Close";
 import EditAnimalSkeleton from "./EditAnimalSkeleton";
+import { AUTH_TOKEN, API_BASE_URL } from "../config";
 
 export default function EditAnimalModal({
   open,
